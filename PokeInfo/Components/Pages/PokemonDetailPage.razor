@@ -1,0 +1,45 @@
+﻿@page "/pokemon-details/{pokemonid}"
+@rendermode InteractiveServer
+
+@inject NavigationManager NavigationManager
+
+@inject PokemonClient PokemonClient
+
+@if (pokemon == null)
+{
+  <LoadingGif />
+}
+else
+{
+  <PageTitle>@pokemon.Name</PageTitle>
+
+  <div class="container justify-content-center">
+    <div class="row text-center">
+      <div>
+        <img src="@pokemon.FrontDefault" alt="Picture of @pokemon.Name">
+      </div>
+      <div></div>
+      <p><em>Types: @string.Join(", ", pokemon.Types)</em></p>
+      <br>
+      <p><em>Abilities: @string.Join(", ", pokemon.Abilities)</em></p>
+      <br>
+      <p><em>Forms: @string.Join(", ", pokemon.Forms)</em></p>
+      <br>
+      <p><em>Moves: @string.Join(", ", pokemon.Moves)</em></p>
+    </div>
+  </div>
+}
+
+@code {
+  [Parameter]
+  public required string? PokemonId { get; set; }
+
+  private PokemonInfo pokemon { get; set; }
+
+  protected override async Task OnInitializedAsync()
+  {
+    int idNumber = Int32.Parse(PokemonId);
+    if (idNumber > 1025) { NavigationManager.NavigateTo("/"); }
+    pokemon = await PokemonClient.GetPokemonByIdAsync(idNumber);
+  }
+}

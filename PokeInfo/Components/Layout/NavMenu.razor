@@ -1,0 +1,17 @@
+﻿<nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+  <div class="container">
+    <a href="/" class="btn btn-primary"><span class="navbar-brand mb-0 h1">Home</span></a>
+    <a href="/pokemon-details/@randomId" class="btn btn-primary"><span class="navbar-brand mb-0 h1">See Random
+        Pokemon</span></a>
+  </div>
+</nav>
+
+@code {
+  public int randomId { get; set; }
+
+  protected override void OnInitialized()
+  {
+    var rand = new Random();
+    randomId = rand.Next(1, 1025);
+  }
+}

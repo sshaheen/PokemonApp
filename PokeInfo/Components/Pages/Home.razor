@@ -1,0 +1,42 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+@inject PokemonClient PokemonClient
+
+<PageTitle>PokeInfo</PageTitle>
+
+<div class="header text-center">
+  <h1>Welcome to PokeInfo!</h1>
+  <p>Click on a Pokemon to get more details.</p>
+</div>
+
+@if (pokemonArray is null)
+{
+  <LoadingGif />
+}
+else
+{
+  <div class="d-flex flex-row flex-wrap justify-content-center p-4">
+    @foreach (var pokemon in pokemonArray)
+    {
+      <Card PokemonId="@pokemon.PokemonId" Name="@pokemon.Name" FrontDefault="@pokemon.FrontDefault" />
+    }
+  </div>
+}
+
+@code {
+  private PokemonInfo[]? pokemonArray { get; set; }
+  protected override async Task OnInitializedAsync()
+  {
+    var buildArray = new PokemonInfo[20];
+    for (var i = 1; i <= 20; i++)
+    {
+      PokemonInfo pokemon = await PokemonClient.GetPokemonByIdAsync(i)
+      ?? throw new Exception("TA HANG PO PING CHICKEN");
+
+      pokemon.Name = pokemon.Name.ToUpper();
+      buildArray[i - 1] = pokemon;
+    }
+    pokemonArray = buildArray;
+  }
+}

@@ -1,0 +1,18 @@
+﻿<div class="p-5 border w-25">
+  <img class="mx-auto d-block" src="@FrontDefault" alt="Picture of @Name">
+  <div class="card-body text-center">
+    <h5 class="card-title">@Name</h5>
+    <a href="/pokemon-details/@PokemonId" class="btn btn-primary">More Info</a>
+  </div>
+</div>
+
+@code {
+  [Parameter]
+  public int PokemonId { get; set; }
+
+  [Parameter]
+  public string? Name { get; set; }
+
+  [Parameter]
+  public string? FrontDefault { get; set; }
+}
