@@ -26,3 +26,4 @@ C:\Users\salem\OneDrive\Documents\Programming\PokemonApp\PokeInfo\obj\Debug\net8
 C:\Users\salem\OneDrive\Documents\Programming\PokemonApp\PokeInfo\obj\Debug\net8.0\PokeInfo.pdb
 C:\Users\salem\OneDrive\Documents\Programming\PokemonApp\PokeInfo\obj\Debug\net8.0\PokeInfo.genruntimeconfig.cache
 C:\Users\salem\OneDrive\Documents\Programming\PokemonApp\PokeInfo\obj\Debug\net8.0\ref\PokeInfo.dll
+C:\Users\salem\OneDrive\Documents\Programming\PokemonApp\PokeInfo\obj\Debug\net8.0\PokeInfo.sourcelink.json
