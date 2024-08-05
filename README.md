@@ -13,3 +13,5 @@ This application helped me learn about the following Blazor concepts:
 * Routing
 * Blazor Render Modes (Mostly using the InteractiveServer render mode)
 * Creating custom 404 pages and redirecting with status codes using UseStatusCodePagesWithRedirects
+
+[Click Here](https://pokemonapp-fbe0ftefh9czhubk.eastus-01.azurewebsites.net/) to check out the website.
