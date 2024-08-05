@@ -3,7 +3,7 @@
 ## Web application for sharing information about Pokemon. Built with Blazor using .NET 8
 
 I built this application as a way to learn more about using .NET 8 and specifically the Blazor frontend framework.
-The application utilizes the [PokeApi]https://pokeapi.co/ to get data about Pokemon.
+The application utilizes the [PokeApi](https://pokeapi.co) to get data about Pokemon.
 
 This application helped me learn about the following Blazor concepts:
 
